@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>Student Registration</h1>
+<!-- form >>label >>input(text/email/password/number/file{accept=file type}/radio) -->
+<!-- form >>label >>select (option) -->
+<!-- form >>label >>input(checkbox)  -->
+<!-- form >>label >> textarea  -->
+<!-- other input >> value /required /placeholder=../ readonly  -->
+    <form action="register.php" method="GET">
+        <label for="name">Name</label>
+        <input type="text" name="stu_name" id="name" value="naungnaung" disabled>
+        <br><br>
+        <label for="email">Email</label>
+        <input type="email" name="stu_email" id="email" placeholder="...@gmail.com" readonly>
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" name="stu_password" id="password">
+        <br><br>
+        <label for="phone">Phone</label>
+        <input type="number" name="stu_number" id="phone">
+        <br><br>
+        <label for="photo">Photo</label>
+        <input type="file" accept="image/*" name="stu_photo" id="photo">
+        <br><br>
+        <label for="year">Years</label>
+        <select name="stu_year" id="year">
+            <option value="0">choose year</option>
+            <option value="1">First year</option>
+            <option value="2">Second year</option>
+            <option value="3">Third year</option>
+        </select>
+        <br><br>
+        <label for="">Gender</label><br>
+        <input type="radio" name="gender" id="male"><label for="male">Male</label>
+        <input type="radio" name="gender" id="female"><label for="female">Female</label>
+        <br><br>
+        <label for="">Hobby</label><br>
+        <input type="checkbox" name="reading" id="reading"><label for="reading">Reading</label>
+        <input type="checkbox" name="studying" id="studying"><label for="studying">Studying</label>
+        <input type="checkbox" name="travelling" id="travelling"><label for="travelling">Travelling</label>
+        <input type="checkbox" name="others" id="others"><label for="others">Others</label>        
+        <input type="text" name="Hobby">
+        <br><br>
+        <label for="address">Address</label>
+        <textarea name="stu_address" id="address" cols="30" rows="10"></textarea>
+        <br><br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
