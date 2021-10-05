@@ -139,7 +139,36 @@
         
         //Precedence *  /   %   +   -   =
         let total = 2*2+15/3%5-4; //4+5%5-4 => 4+0-4 => 4-4 => 0
-        console.log(total)
+        console.log(total);
+
+        //comparisons
+        let n   =   12;
+        console.log(n<15)   ;   //less than
+        console.log(n>10)   ;   //greater than
+        console.log(n<=12)  ;   //less than or equal
+        console.log(n>=15)  ;   //greater than or equal
+        console.log(n==12)  ;   //equal value
+        console.log(n===12) ;   //equal value and equal type of
+        console.log(n!=12)  ;   //not equal value
+        console.log(n!=="13");   //not equal value and type of
+
+        //condition
+    //if and else if and else
+    // 1 conditions>>if(condition){do sth}
+    // 2 conditions>>if(true){do something}else{do sth} 
+    // 3 conditions>>if(condition){do sth}else if (condition){do sth}else{do sth}
+        let input1 = prompt("Enter Number");
+        if(input1<50){
+            alert("Number is Less than 50");
+        }else if (input1==50){
+            alert("Number is equal to 50");
+        }else{
+            alert("Number is greater than 50");
+        }
+
+
+
+
         
     </script>
 </body>
