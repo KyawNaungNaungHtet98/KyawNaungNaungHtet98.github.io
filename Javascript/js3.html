@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 3</title>
+</head>
+<body>
+    <script>
+        //function
+        function x() {
+            document.write("Hello Function+<br>")
+        }
+        x();
+
+        function number(num1,num2) {
+            document.write(num1+num2+"<br>");
+        }
+        number(1,3);
+
+        function adding(number1,number2) {
+            document.write(number1+number2);
+        }
+        let firstNum = prompt("first Number");
+        let SecondNum = prompt("second number");
+        adding(Number(firstNum),Number(SecondNum));
+        
+        let laptop = {brand:"apple", type:"M1", price:"$500"};
+        console.log(laptop)
+        console.log(laptop.price)
+    </script>
+</body>
+</html>

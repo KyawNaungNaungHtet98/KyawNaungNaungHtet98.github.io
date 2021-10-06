@@ -59,6 +59,47 @@
     let arr_d = [...arr_a,...arr_b];
     console.log(arr_d);
 
+    // loop
+    //for (initial,condition,operation){do sth}
+    for (let i=1; i<=10; i++){
+        document.write(`<h1>${i}.Hello Js</h1>`);
+    }
+
+    //inditial state>>>while(condition){operation}
+    let num = 1;
+    while(num<10){
+    document.write(`<h1>This is Number ${num}</h1>`);
+    num++;
+    }
+
+    //do{}while(condition)
+    let no1 = 1;
+    do{
+        document.write(`<h1>Number is ${no1}</h1>`);
+        no1++
+    }while(no1<10);
+
+    //Using "for" loop to link Array
+    let list = ["a","b","c","d"];
+    let list_count = list.length;
+    console.log(list_count);
+
+    for(let j=0; j<list_count; j++){
+        document.write(`<h1>${list[j]}</h1>`);
+    }
+
+    //Using "for...of.." loop to link Array
+    //for(let value of .....){}
+    for (const value of list) {
+        document.write(`<h1>The value is ${value}</h1>`);
+    }
+
+    //Using "while"loop to link Array
+    let n = 0;
+    while(n<list_count){
+        document.write(`<h1>${list[n]}</h1>`);n++;
+    }
+
 
     </script>
 </body>
