@@ -7,105 +7,40 @@
     <title>Exam Result</title>
 </head>
 <body>
+ <center>
+     <h1>Exam Result</h1>
+ </center>
     <center>
-    <h1>Exam Result</h1>
-    </center>
-    <center>
-        <table>
-            <form action="">
-            <tr>
-                <td>
-                   
-                    <label for="myanmar">Myanmar</label>
-                </td>
-                <td>
-                    <input type="number" name="" id="myanmar">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="english">English</label>
-                </td>
-                <td>
-                    <input type="number" id="english">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="maths">Maths</label>
-                </td>
-                <td>
-                    <input type="number" id="maths">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="physics">Physics</label>
-                </td>
-                <td>
-                    <input type="number" id="physics">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="chemistry">Chemistry</label>
-                </td>
-                <td>
-                    <input type="number" id="chemistry">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="biology">Biology</label>
-                </td>
-                <td>
-                    <input type="number" id="biology">
-                </td>
-            </tr>
-            <tfoot>
-                <tr>
-                    <td>
-                    <button type="button" onclick="exam_mark()">submit</button>
-                    </td>
-                </tr>
-            </tfoot>
+        <form action="">
+            <label for="Myanmar">Myanmar</label>
+            <input type="number" name="" id="Myanmar"><br><br>
+            <label for="English">English</label>
+            <input type="number" name="" id="English"><br><br>
+            <label for="Maths">Maths</label>
+            <input type="number" name="" id="Maths"><br><br>
+            <button type="button" onclick="exam()">Calculate mark</button>
         </form>
-        </table>
     </center>
-
-    <div id="result"></div>
+    <div id="exam_result"></div>
     <script>
-        function exam_mark(){
-            let M = document.getElementById("myanmar").value;
-            let E = document.getElementById("english").value;
-            let Maths = document.getElementById("maths").value;
-            let Phy = document.getElementById("physics").value;
-            let Chem = document.getElementById("chemistry").value;
-            let Bio =document.getElementById("biology").value;
-
-            if(M>=50 && E>=50 && Maths>=50 && Phy>=50 && Chem>=50 && Bio>=50){
-                let pass = document.getElementById("result");
-               // console.log (pass);
-               pass.innerHTML = "<h1>This Student is Pass</h1>";
-            }else if(M>=80 && E>=80 && Maths>=80 && Phy>=80 && Chem>=80 && Bio>=80){
-                let D = document.getElementById("result");
-                //console.log(D)
-                D.innerHTML ="<h1> This Student pass with Distinction"
-            }else(M<50 && E<50 && Maths<50 && Phy<50 && Chem<50 && Bio<50)
-                let fail = document.getElementById("result");
-                console.log (fail);
-                fail.innerHTML = "<h1> This Student is fail</h1> ";
+        function exam(){
+            let Myan = document.getElementById("Myanmar").value;
+            let Eng = document.getElementById("English").value;
+            let Math = document.getElementById("Maths").value;
+            if (Myan>=80 || Eng>=80 || Math>=80){
+                let D = document.getElementById("exam_result");
+                D.innerHTML = "<h1>This Student pass with Distinction</h1>"
+            }else if (Myan>=40 || Eng>=40 || Math>=40){
+                let pass =document.getElementById("exam_result");
+                pass.innerHTML = "<h1>This Student is pass</h1>";
+               
             }
-            
-        
-</script>
-
-
-
-
-
-
-
-
+            else{
+                let fail =document.getElementById("exam_result");
+                fail.innerHTML = "<h1> This Student is fail</h1>";
+ 
+            }
+        }
+    </script>
 </body>
 </html>
