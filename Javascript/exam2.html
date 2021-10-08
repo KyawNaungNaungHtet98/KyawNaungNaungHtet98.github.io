@@ -27,13 +27,15 @@
             let Myan = document.getElementById("Myanmar").value;
             let Eng = document.getElementById("English").value;
             let Math = document.getElementById("Maths").value;
-            if (Myan>=80 || Eng>=80 || Math>=80){
+
+            if (Myan>=40 && Eng>=40 && Math>=40){
+                if (Myan>=80 || Eng>=80 || Math>=80) {
                 let D = document.getElementById("exam_result");
-                D.innerHTML = "<h1>This Student pass with Distinction</h1>"
-            }else if (Myan>=40 && Eng>=40 && Math>=40){
+                D.innerHTML = "<h1>This Student pass with Distinction</h1>";
+                }else{                
                 let pass =document.getElementById("exam_result");
-                pass.innerHTML = "<h1>This Student is pass</h1>";
-            }else{
+                pass.innerHTML = "<h1>This Student is pass</h1>";}
+            }else {
                 let fail =document.getElementById("exam_result");
                 fail.innerHTML = "<h1> This Student is fail</h1>"; 
             }
