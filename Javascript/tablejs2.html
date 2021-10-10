@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <table>
+        <form action="">
+             <tr>
+                <td><label for="Name">Name</label></td>
+                <td><input type="text" id="Name"></td>
+            </tr>
+            <tr>
+                <td><label for="Age">Age</label></td>
+                <td><input type="number" id="Age"></td>
+            </tr>
+            <tr>
+                <td><label for="Mail">Mail</label></td>
+                <td><input type="email" id="Mail"></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="submit()">Submit</button></td>
+            </tr>
+        </form>
+    </table>
+    </center>
+    <br><br>
+    <center>
+        <table border="1" cellpadding="15" cellspacing="0">
+            <thead>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mail</th>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </center>
+
+    <script>
+            let name = document.getElementById("Name").value;
+            let age = document.getElementById("Age").value;
+            let mail = document.getElementById("Mail").value;
+        function submit() {
+            let myData = []
+            let tbody = document.querySelector('#tbody');
+            let x ='';
+            let i = 1;
+            for (const value of myData) {
+                x += `<tr>
+                            <td>${i++}</td>
+                            <td>${value.name}</td>
+                            <td>${value.age}</td>
+                            <td>${value.mail}</td>
+                        </tr>`;
+            }
+            tbody.innerHTML = x;
+        }
+    </script>
+</body>
+</html>
