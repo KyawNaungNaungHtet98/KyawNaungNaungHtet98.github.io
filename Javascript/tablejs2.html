@@ -23,7 +23,7 @@
                 <td><input type="email" id="Mail"></td>
             </tr>
             <tr>
-                <td><button type="button" onclick="submit()">Submit</button></td>
+                <td><button type="button" onclick="Data()">Submit</button></td>
             </tr>
         </form>
     </table>
@@ -42,20 +42,18 @@
     </center>
 
     <script>
-            let name = document.getElementById("Name").value;
-            let age = document.getElementById("Age").value;
-            let mail = document.getElementById("Mail").value;
-        function submit() {
-            let myData = []
+        function Data(){
+    let myData = [document.querySelector("#Name").value,document.querySelector("#Age").value,document.querySelector("#Mail").value]
+            console.log(myData);
             let tbody = document.querySelector('#tbody');
             let x ='';
             let i = 1;
             for (const value of myData) {
                 x += `<tr>
                             <td>${i++}</td>
-                            <td>${value.name}</td>
-                            <td>${value.age}</td>
-                            <td>${value.mail}</td>
+                            <td>${myData[0]}</td>
+                            <td>${myData[1]}</td>
+                            <td>${myData[2]}</td>
                         </tr>`;
             }
             tbody.innerHTML = x;
