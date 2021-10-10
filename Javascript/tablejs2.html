@@ -43,7 +43,7 @@
 
     <script>
         function Data(){
-    let myData = [document.querySelector("#Name").value,document.querySelector("#Age").value,document.querySelector("#Mail").value]
+        let myData = [{name:document.querySelector("#Name").value,age:document.querySelector("#Age").value,mail:document.querySelector("#Mail").value}]
             console.log(myData);
             let tbody = document.querySelector('#tbody');
             let x ='';
@@ -51,9 +51,9 @@
             for (const value of myData) {
                 x += `<tr>
                             <td>${i++}</td>
-                            <td>${myData[0]}</td>
-                            <td>${myData[1]}</td>
-                            <td>${myData[2]}</td>
+                            <td>${value.name}</td>
+                            <td>${value.age}</td>
+                            <td>${value.mail}</td>
                         </tr>`;
             }
             tbody.innerHTML = x;
