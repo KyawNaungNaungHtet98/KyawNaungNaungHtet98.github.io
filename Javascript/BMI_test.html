@@ -30,6 +30,7 @@
         </table>
     </center>
     <p id="result"></p>
+    
     <script>
  
 
@@ -48,17 +49,16 @@
            
            if (BMI>=25) {
                if (BMI>30) {
-                document.getElementById("result").innerText = "Your BMI is "+ BMI + " Obes";
+                document.getElementById("result").innerText = "Your BMI is "+ BMI.toFixed(2) + " Obes";
                }else{
-                document.getElementById("result").innerText = "Your BMI is "+ BMI + " Overweight" ;
+                document.getElementById("result").innerText = "Your BMI is "+ BMI.toFixed(2) + " Overweight" ;
                }
            }else if (BMI<=18.5) {
-            document.getElementById("result").innerText = "Your BMI is "+ BMI + " Underweight";
+            document.getElementById("result").innerText = "Your BMI is "+ BMI.toFixed(2) + " Underweight";
            }else{
-            document.getElementById("result").innerText = "Your BMI is "+ BMI + " Healthweight";
+            document.getElementById("result").innerText = "Your BMI is "+ BMI.toFixed(2) + " Healthweight";
            }
         }
-        
     </script>
 </body>
 </html>
