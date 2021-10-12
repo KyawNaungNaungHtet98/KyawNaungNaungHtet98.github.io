@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #bg{
+            height: 214px;
+            background-image: url("tree.jpg");
+        }
+        #train{
+            position: relative;
+            margin-top: -125px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="bg"></div>
+    <img src="train.gif" alt="" id="train" width="300" height="131">
+    <br><br>
+    <button type="button" onclick="startTrain()">Start</button>
+
+    <script>
+        let train = document.getElementById("train");
+        function startTrain() {
+            let start = Date.now();
+            let timmer = setInterval(function(){
+                let timePassed = Date.now()-start;
+                train.style.left = timePassed/5 +'px';
+                if (timePassed>6000) clearInterval(timmer);
+                    
+            },20)
+        }
+    </script>
+
+</body>
+</html>
