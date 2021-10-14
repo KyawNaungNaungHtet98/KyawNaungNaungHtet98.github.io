@@ -1,0 +1,63 @@
+h1{
+    text-align: center;
+    color: tomato;
+}
+
+    /*Universal selector*/
+*{
+    margin: 0px;
+    padding: 1px;
+}
+
+    /*Tag / Element Selector*/
+h4{
+    /*color: violet;Text*/
+    /*background-color: #9babd4;hex code*/
+    color: rgb(197, 239, 252);/*RGB*/
+    word-spacing: 1px;/*Between one word and one word away*/
+    line-height: 50px;/*Between one line  one line away*/
+    text-indent: 40px;/*Paragraph start spacing*/
+}
+
+    /*Attribute Selector*/
+a[title="Google"]{
+    text-decoration: none;
+    color: yellow;
+}
+
+    /*Id Selector*/
+#idSelector{
+    color: yellowgreen;
+    text-align: justify;
+    letter-spacing: 10px;
+}
+p#idSelector{
+    text-indent: 40px;
+}
+
+    /*Class Selector*/
+.classSelector{
+    text-indent: 40px;
+    color: peru;
+    line-height: 30px;
+    word-spacing: 20px;
+    text-align: justify;
+}
+div.classSelector{
+    color:tomato;
+    word-spacing: 0px;
+}
+
+    /*Descendent Selector*/
+p a{
+    color: red;
+}
+p span{
+    color: chartreuse;
+}
+
+
+    /*Child Selector*/
+p.child>a{
+    color: darkgray;
+}
