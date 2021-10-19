@@ -223,3 +223,76 @@ p:empty{
     display: inline-block;
     width: 400px;
 }
+
+            /*Float*/
+.floatleft img{
+    float: left;
+}
+.clear{
+    clear: both;
+}
+.floatright img{
+    float: right;
+}
+
+            /*Grid*/
+.gridone div,.gridtwo div,.gridthree div,.gridfour div,.gridfive div,.gridsix div{
+    padding: 20px;
+    text-align: center;
+    color: whitesmoke;
+}
+.gridone,.gridtwo,.gridthree,.gridfour,.gridfive,.gridsix{
+    display: grid;
+    grid-template-columns: auto auto auto;  
+}
+.gridtwo{                   /*Column Separated*/
+    grid-column-gap: 50px;
+}
+.gridthree{                 /*Row Separated*/
+    grid-row-gap: 40px;
+}
+.gridfour{                  /*Column + Row Separated*/
+    grid-gap: 50px 40px;
+}
+.addcolumn{                 /*+Columns*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.addrow{                    /*+Rows*/
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+            /*Position*/
+.relative_parent{
+    border: 1px solid red;
+    width: 1000px;
+    height: 500px;
+}
+.relative{                              /*Position relative*/
+    border: 1px solid black;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+.absolute_parent{
+    position: relative;
+    border: 1px solid black;
+    width: 1000px;
+    height: 600px;
+}
+.absolute{                              /*Position absolute*/
+    border: 1px solid red;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+}
+.fixed{                                 /*Position Fixed*/
+    position: fixed;
+    top: 50px;
+    left: 1000px;
+}
