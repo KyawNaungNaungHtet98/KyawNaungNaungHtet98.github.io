@@ -296,3 +296,17 @@ p:empty{
     top: 50px;
     left: 1000px;
 }
+                        /*Font*/
+.online{
+    text-justify: auto;
+    text-indent: 15px;
+    font-family: 'Festive', cursive;
+    font-size: 20px;
+}
+@font-face {
+    src: url(Font/Rampart_One/RampartOne-Regular.ttf);
+    font-family: Regular;
+}
+.offline{
+    font-family: Regular;
+}
