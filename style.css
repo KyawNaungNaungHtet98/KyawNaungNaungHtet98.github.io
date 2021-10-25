@@ -1,10 +1,44 @@
-pre{
-    text-align: right;
-    color: white;
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
-#1{
+body{
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.menu_bar{
+    background-color: white;
     text-align: center;
 }
-.title{
-    display: inline-block;
+.menu_bar ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+.menu_bar ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu_bar ul li a{
+    text-decoration: none;
+    color: black;
+}
+.menu_bar ul li a:hover{
+    text-transform: uppercase;
+    border-radius: 3px;
+    background: white;
+}
+.sub-menu-1{
+    display: none;
+}
+.menu_bar ul li a:hover .sub-menu-1{
+    
+    position: absolute;
+    background: green;
+    margin-top: 15px;
+    margin-left: -15px;
+
 }
