@@ -3,13 +3,18 @@
     padding: 0px;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: font;
+    src: url(Css_Project/Fonts/Gravitas_One/GravitasOne-Regular.ttf);
+}
 body{
     background-image: url(background.jpg);
     background-size: cover;
     background-position: center;
+    font-family: fantasy;
 }
 .menu_bar{
-    background-color: white;
+    background-color: #9cf58e;
     text-align: center;
 }
 .menu_bar ul{
@@ -30,14 +35,16 @@ body{
     text-transform: uppercase;
     border-radius: 3px;
     background: white;
+    
 }
 .sub-menu-1{
     display: none;
 }
 .menu_bar ul li a:hover .sub-menu-1{
-    
+    display:inline-flex;
+    flex-direction: column;
     position: absolute;
-    background: green;
+    background: #9cf58e;
     margin-top: 15px;
     margin-left: -15px;
 
