@@ -29,23 +29,21 @@ body{
 }
 .menu_bar ul li a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .menu_bar ul li a:hover{
     text-transform: uppercase;
     border-radius: 3px;
-    background: white;
-    
+    background:green;
 }
 .sub-menu-1{
     display: none;
 }
-.menu_bar ul li a:hover .sub-menu-1{
-    display:inline-flex;
+.menu_bar ul li a:hover >.sub-menu-1{
+    display:block;
     flex-direction: column;
     position: absolute;
     background: #9cf58e;
     margin-top: 15px;
     margin-left: -15px;
-
 }
