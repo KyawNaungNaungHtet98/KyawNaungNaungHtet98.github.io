@@ -12,7 +12,7 @@
     display: block;
     margin-left: 30px;
 }
-.hover li a:link{
+.hover li a{
     text-decoration: none;
     display: inline-block;
     color: white;
@@ -90,7 +90,7 @@ div.grid .grid_one{
     color: gold;
 }
 .grid div{
-    border: 4px double darkgray;
+    border: 1px dotted gold;
     background-color: black;
     color: white;
     text-align: center;
@@ -136,6 +136,8 @@ div.grid .grid_one{
     grid-template-columns: auto auto;
     background-color: black;
     margin-top: 50px;
+    border-top: 1px dotted gold;
+    border-bottom: 1px dotted gold;
 }
 .boxtext{
     color: white;
@@ -161,7 +163,95 @@ div.grid .grid_one{
     background-color: black;
     color: gold;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .box img{
     margin-right: 40px;
 }
+/*----------------------------------------------------------------------------------------------------*/
+        /*start with date*/
+.date{
+    margin-top: 50px;
+}
+.date h2{
+    color: gold;
+}
+.december{
+    width: 35%;
+    margin-left: 160px;
+    float: left;                        /*float*/
+}
+.february{
+    position: relative;                 /*position*/
+    left: 130px;
+    right: 40px;
+    width: 75%;
+}
+.clear{
+    clear: both;
+}
+/*--------------------------------------------------------------------------------------------------*/
+/*Footer start*/
+footer{
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+    height: 100px;
+}
+footer p {
+    padding-top: 50px;
+    margin-left: 90px;
+    display: inline-block;
+}
+footer p b{
+    color: gold;
+}
+footer a{
+    position: relative;
+    left: 650px;
+    width: 75%;
+    padding: 15px;
+    color: gold;
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+            /*shop html start*/
+            /*search box*/
+
+.search{
+    text-align: left;
+    background-image: url(../images/background.jpg);
+    height: 500px;
+}
+.search h2{
+    color: white;
+    position: relative;
+    top: 150px;
+    left: 200px;
+}
+.search h1{
+    color: Gold;
+    position: relative;
+    top: 150px;
+    left: 200px;
+    font-family: great_vibes;
+}
+.search p{
+    color: white;
+    position: relative;
+    top: 150px;
+    left: 200px;
+    width: 30%;
+}
+.search_box{
+    text-align: center;
+    width: 10%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid gold;
+    background-color: black;
+    color: white;
+    position: relative;
+    top: 150px;
+    left: 220px;
+}
+/*---------------------------------------------------------------------------------------------------*/

@@ -11,16 +11,14 @@ body{
     background-image: url(background.jpg);
     background-size: cover;
     background-position: center;
-    font-family: fantasy;
 }
 .menu_bar{
-    background-color: #9cf58e;
-    text-align: center;
+    text-align: right;
 }
 .menu_bar ul{
     display: inline-flex;
     list-style: none;
-    color: white;
+    color: black;
 }
 .menu_bar ul li{
     width: 120px;
@@ -29,21 +27,20 @@ body{
 }
 .menu_bar ul li a{
     text-decoration: none;
-    color: white;
+    color: whitesmoke;
 }
 .menu_bar ul li a:hover{
-    text-transform: uppercase;
     border-radius: 3px;
     background:green;
 }
 .sub-menu-1{
     display: none;
 }
-.menu_bar ul li a:hover >.sub-menu-1{
+.menu_bar ul li a:hover .sub-menu-1{
     display:block;
     flex-direction: column;
     position: absolute;
     background: #9cf58e;
-    margin-top: 15px;
-    margin-left: -15px;
+    top: 15px;
+    left: -15px;
 }
