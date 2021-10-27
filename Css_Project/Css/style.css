@@ -280,6 +280,54 @@ footer a{
 
 
 
+/*about html start*/
+.about-background{
+    background-image: url(../images/background.jpg);
+    height: 500px;
+}
+.about-background div h1{
+    color:gold;
+    position: absolute;
+    top: 330px;
+    left: 290px;
+    font-family: great_vibes;
+    font-size: 40px;
+}
+.about-background div h2{
+    color:white;
+    position: absolute;
+    top: 250px;
+    left: 290px;
+    font-size: 40px;
+}
+.about-background div p{
+    color:white;
+    position: absolute;
+    top: 400px;
+    left: 290px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*about html end*/
 /*-------------------------------------------------------------------------------------------------------------*/
 /*contact html start*/
 .contact-grid{
@@ -294,12 +342,15 @@ footer a{
 .contact-us{
     padding: 90px;
     background:black;
-    color: white;
-
+    color:goldenrod;
+}
+.contact-us h2{
+    color: goldenrod;
 }
 .contact-info{
     padding-top: 90px;
     padding-left: 50px;
     background: goldenrod;
 }
+
 /*contact done*/
