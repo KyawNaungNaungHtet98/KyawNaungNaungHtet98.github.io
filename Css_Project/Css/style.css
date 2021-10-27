@@ -254,4 +254,52 @@ footer a{
     top: 150px;
     left: 220px;
 }
+                /*search box done*/
 /*---------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/*contact html start*/
+.contact-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 1px solid whitesmoke;
+    border-radius: 30px;
+    height: 580px;
+    margin: 50px;
+}
+
+.contact-us{
+    padding: 90px;
+    background:black;
+    color: white;
+
+}
+.contact-info{
+    padding-top: 90px;
+    padding-left: 50px;
+    background: goldenrod;
+}
+/*contact done*/
