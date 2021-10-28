@@ -307,7 +307,7 @@ footer a{
     color:white;
     position: absolute;
     top: 450px;
-    left: 290px;
+    left: 310px;
     font-size: 25px;
 }
                 /*mission*/
@@ -363,12 +363,80 @@ footer a{
 }
     /*offer done*/
                 /*marketing start*/
-
+.about-service{
+    margin: 70px 150px 20px 150px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.about-marketing{
+    color: white;
+    border-left: 1px solid goldenrod;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.about-marketing p {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.about-development{
+    color: white;
+    border-left: 1px solid goldenrod;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.about-development p{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.about-employment{
+    color: white;
+    border-left: 1px solid goldenrod;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.about-employment p{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.about-service button{
+    padding: 5px;
+    color: gold;
+    background-color: black;
+}
+.about-service button:hover{
+    color:gold;
+    transform: translate(4px,-5px);
+    transition-duration: 0.4s; 
+}
     /*marketing done*/
+                    /*team start*/
+.about-ourteam{
+    margin-top: 70px;
+    text-align: center;
+}
+.about-team{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 30px;
+    margin-left: 30px;
+}
+.about-team p{
+    color: white;
+}
+.about-custom{
+    background-color: white;
+    margin: 70px 0px 0px 0px;
+}
 
-
-
-
+.about-footer{
+margin-top: 70px;
+padding-top: 90px;
+background-color: black;
+color: white;
+height: 100px;
+}
 
 
 
