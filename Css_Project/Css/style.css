@@ -281,6 +281,9 @@ footer a{
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*about html start*/
+.about{
+    background-color: black;
+}
 .about-background{
     background-image: url(../images/background.jpg);
     height: 500px;
@@ -308,7 +311,54 @@ footer a{
     font-size: 25px;
 }
                 /*mission*/
-
+.about-mission{
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 30px 90px 20px 90px;
+}
+.about-ourmission{
+    padding: 50px;
+    /*border-left: 1px solid goldenrod;*/
+}
+.about-ourmission div{
+    font-size: 50px;
+    color: goldenrod;
+}
+.about-ourmission p{
+    color: white;
+    padding-right: 20px;
+}
+.about-mission img{
+    padding: 50px;
+}
+/*offer start*/
+.about-offer{
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 30px 90px 20px 90px;
+}
+.about-ouroffer{
+    padding-left: 50px;
+    margin-left: 150px;
+    /*border-left: 1px solid goldenrod;*/
+}
+.about-ouroffer ul{
+    color: white;
+    padding-left: 20px;
+}
+.about-ouroffer h3{
+    color: white;
+}
+.about-ouroffer h1{
+    font-size: 50px;
+    color: goldenrod;
+}
+.about-offer img{
+    width: 100%;
+    padding: 60px;
+}
 
 
 
