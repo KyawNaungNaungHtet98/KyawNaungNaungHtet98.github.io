@@ -193,7 +193,7 @@ div.grid .grid_one{
 /*--------------------------------------------------------------------------------------------------*/
 /*Footer start*/
 footer{
-    margin-top: 50px;
+    margin-top: 50px;       /* margin repair other pages*/
     background-color: black;
     color: white;
     height: 100px;
@@ -291,7 +291,7 @@ footer a{
 .about-background div h1{
     color:gold;
     position: absolute;
-    top: 330px;
+    top: 400px;
     left: 350px;
     font-family: great_vibes;
     font-size: 40px;
@@ -299,14 +299,14 @@ footer a{
 .about-background div h2{
     color:white;
     position: absolute;
-    top: 250px;
+    top: 330px;
     left: 290px;
     font-size: 40px;
 }
 .about-background div p{
     color:white;
     position: absolute;
-    top: 400px;
+    top: 450px;
     left: 290px;
     font-size: 25px;
 }
@@ -332,7 +332,8 @@ footer a{
 .about-mission img{
     padding: 50px;
 }
-/*offer start*/
+    /*mission done*/
+                    /*offer start*/
 .about-offer{
     width: 80%;
     display: grid;
@@ -340,13 +341,14 @@ footer a{
     margin: 30px 90px 20px 90px;
 }
 .about-ouroffer{
-    padding-left: 50px;
-    margin-left: 150px;
+    /*padding-left: 50px;*/
+    margin-left: 200px;
+    padding-top: 60px;
     /*border-left: 1px solid goldenrod;*/
 }
 .about-ouroffer ul{
     color: white;
-    padding-left: 20px;
+    padding-left: 50px;
 }
 .about-ouroffer h3{
     color: white;
@@ -359,6 +361,10 @@ footer a{
     width: 100%;
     padding: 60px;
 }
+    /*offer done*/
+                /*marketing start*/
+
+    /*marketing done*/
 
 
 
