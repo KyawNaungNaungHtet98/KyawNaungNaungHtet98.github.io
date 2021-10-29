@@ -364,7 +364,7 @@ footer a{
     /*offer done*/
                 /*marketing start*/
 .about-service{
-    margin: 70px 150px 20px 150px;
+    margin: 100px 150px 100px 150px;
     width: 80%;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -412,8 +412,9 @@ footer a{
     /*marketing done*/
                     /*team start*/
 .about-ourteam{
-    margin-top: 70px;
+    margin-top: 190px;
     text-align: center;
+    margin-bottom: 50px;
 }
 .about-team{
     margin-top: 30px;
@@ -425,17 +426,25 @@ footer a{
 .about-team p{
     color: white;
 }
-.about-custom{
-    background-color: white;
-    margin: 70px 0px 0px 0px;
+/*Partaner start*/
+.about-partaner{
+    width: 89%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 80px;
+    grid-row-gap: 40px;
+    margin-left: 150px;
+    /*margin-bottom: 100px;*/
 }
-
+/*Parater done*/
+/*about footer*/
 .about-footer{
-margin-top: 70px;
-padding-top: 90px;
-background-color: black;
-color: white;
-height: 100px;
+    background-color: black;
+    color: white;
+    padding-top: 100px;
+    margin-top: 0px;
+    /*height: 100px;*/
 }
 
 
