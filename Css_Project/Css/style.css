@@ -257,10 +257,58 @@ footer a{
                 /*search box done*/
 
 /*---------------------------------------------------------------------------------------------------*/
-
-
-
-
+/*Blog html start*/
+/*Backgroud*/
+.blog-background{
+    background-image: url(../images/background.jpg);
+    height: 500px;
+}
+.blog-background div h1{
+    color:gold;
+    position: absolute;
+    top: 400px;
+    left: 350px;
+    font-family: great_vibes;
+    font-size: 40px;
+}
+.blog-background div h2{
+    color:white;
+    position: absolute;
+    top: 330px;
+    left: 290px;
+    font-size: 40px;
+}
+.blog-background div p{
+    color:white;
+    position: absolute;
+    top: 450px;
+    left: 310px;
+    font-size: 25px;
+}
+/*blog start*/
+.blog-beer{
+    margin: 90px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 30px;
+}
+.blog-beer p{
+    text-align: justify;
+}
+.blog-beer img{
+    width: 100%;
+}
+.blog-beer button{
+    padding: 5px;
+    color: gold;
+    background-color: black;
+}
+.blog-beer button:hover{
+    color:gold;
+    transform: translate(4px,-5px);
+    transition-duration: 0.4s; 
+}
 
 
 
