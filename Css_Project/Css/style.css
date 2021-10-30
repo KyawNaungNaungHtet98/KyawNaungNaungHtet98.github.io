@@ -309,12 +309,149 @@ footer a{
     transform: translate(4px,-5px);
     transition-duration: 0.4s; 
 }
+.blog-beer h4{
+    padding-top: 15px;
+}
+.blog-beer p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.stand-for p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
+/*beer blog done*/
 
+.blog-intro div button{
+    display: block;
+}
+.blog-intro{
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: black;
+    color: white;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    padding: 50px;
+}
+.blog-AB-beer{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: 3px solid goldenrod;
+    padding: 10px;
+}
+/*.blog-intro{
+    width: 80%;
+    margin: 90px;
+    padding: 12px;
+}*/
+.blog-AB-beer h2,.blog-AB-beer p,.blog-AB-beer button{
+    position: absolute;
+}
+.blog-AB-beer h2{
+    left: 650px;
+}
+.blog-AB-beer p{
+    left: 650px;
+    top: 1440px;
+    right: 90px;
+    color: white;
+    text-align: justify;
+}
+.blog-AB-beer button{
+    left: 650px;
+    top: 1540px;
+    padding: 10px;
+    background-color: black;
+    color: gold;
 
+}
+.blog-AB-beer button:hover{
+    color: gold;
+    transform: translate(4px,-5px);
+    transition-duration: 0.4s; 
+}
+.blog-AB-beer img{
+    /*padding: 15px;*/
+    width: 40%;
+}
+.blog-Hei{
+    border: 3px solid goldenrod;
+    padding: 10px;
+}
+.blog-Hei h2,.blog-Hei p{
+    padding-top: 20px;
+}
+.blog-Hei p{
+    text-align: justify;
+    padding-bottom: 20px;
+}
+.blog-Hei img{
+    width:100%;
+}
+.blog-Hei button{
+    padding: 10px;
+    background-color: black;
+    color: gold;
 
+}
+.blog-Hei button:hover{
+    color: gold;
+    transform: translate(4px,-5px);
+    transition-duration: 0.4s; 
+}
+.blog-asahi{
+    border: 3px solid goldenrod;
+    padding: 10px;
+}
+.blog-asahi p{
+    text-align: justify;
+    padding-bottom: 20px;
+    }
+.blog-asahi img{
+    padding-top: 20px;
+    width:100%;
+}
+.blog-asahi h2,.blog-asahi p{
+    padding-top: 20px;
+}
+.blog-asahi button{
+    padding: 10px;
+    background-color: black;
+    color: gold;
 
-
+}
+.blog-asahi button:hover{
+    color: gold;
+    transform: translate(4px,-5px);
+    transition-duration: 0.4s; 
+}
+/*introduction done*/
+/*custom*/
+.blog-custom{
+    margin: 90px;
+    display: grid;
+    width: 80%;
+    grid-template-columns: auto auto;
+    grid-column-gap: 100px;
+}
+.blog-custom-1{
+    border-left: 3px solid gold;
+    border-bottom: 3px solid gold;
+    padding:20px;
+}
+.blog-custom-1 img{
+    width: 60%;
+}
+.blog-custom-2{
+    border-left: 3px solid gold;
+    border-bottom: 3px solid gold;
+    padding:20px;
+}
+.blog-custom-2 img{
+    width: 60%;
+}
 
 
 
