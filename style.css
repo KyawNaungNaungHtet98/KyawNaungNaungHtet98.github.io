@@ -1,46 +1,4 @@
 *{
     margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-@font-face {
-    font-family: font;
-    src: url(Css_Project/Fonts/Gravitas_One/GravitasOne-Regular.ttf);
-}
-body{
-    background-image: url(background.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.menu_bar{
-    text-align: right;
-}
-.menu_bar ul{
-    display: inline-flex;
-    list-style: none;
-    color: black;
-}
-.menu_bar ul li{
-    width: 120px;
-    margin: 15px;
-    padding: 15px;
-}
-.menu_bar ul li a{
-    text-decoration: none;
-    color: whitesmoke;
-}
-.menu_bar ul li a:hover{
-    border-radius: 3px;
-    background:green;
-}
-.sub-menu-1{
-    display: none;
-}
-.menu_bar ul li a:hover .sub-menu-1{
-    display:block;
-    flex-direction: column;
-    position: absolute;
-    background: #9cf58e;
-    top: 15px;
-    left: -15px;
+    padding: 1px;
 }
