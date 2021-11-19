@@ -1,4 +1,23 @@
 *{
     margin: 0px;
     padding: 1px;
+    background-color: teal;
+}
+.nav ul{
+    text-align: center;
+    font-size: 30px;
+    /*background-color: brown;*/
+}
+.nav ul li{
+    display: inline;
+    word-spacing: 0px;
+    padding: 30px;
+}
+.nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+.nav ul li a:hover{
+    color: brown;
+
 }
