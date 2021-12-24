@@ -1,0 +1,10 @@
+body{
+    background-color: #29374c;
+    opacity: 0.9;
+    background-image: radial-gradient(circle at center center, #070810, #29374c), repeating-radial-gradient(circle at center center, #070810, #070810, 9px, transparent 18px, transparent 9px);
+    background-blend-mode: multiply;
+}
+nav ul li{
+    text-decoration: none;
+    color: black;
+}
