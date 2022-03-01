@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            // var p = $("p");
+            // console.log(p);
+            // var classP = $("p.myP");
+            // console.log(classP);
+            // var idP = $("p#myP");
+            // console.log(idP);
+
+            // classP.click(function(param){
+            //     $(this).hide();
+            // })
+
+            // var ele2 = $(".myBtn");
+            // ele2.click(function(){
+            //     $(idP).hide();
+            // })
+
+            // var ele3 = $("h2.myP");
+            // console.log(ele3);
+
+            // var ele4 = $("ul li:first");
+            // console.log(ele4);
+
+            // var ele5 = $("#contents ul.people li");
+            // console.log(ele5);
+
+            // var ele6 = $(":button");
+            // console.log(ele6);
+
+            // var ele7 = $("div.foo");
+            // console.log(ele7.has("p"));
+
+            // var ele8 = $("h1").not(".bar");
+            // console.log(ele8);
+
+            var ele9 = $("ul li").filter(".current");
+            console.log(ele9);
+
+            var ele10 = $("ul li").first();
+            console.log(ele10);
+
+            var ele11 = $("ul.current li").eq(2); 
+            console.log(ele11);
+        })
+    </script>
+    <title>JQuery Selector</title>
+</head>
+<body>
+    <p id="myP">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus tempore pariatur obcaecati a repudiandae molestias quae aspernatur laudantium, omnis quos?</p>
+    
+    <p class="myP">This is second p</p>
+    
+    <button class="myBtn">click</button>
+    
+    <h2 class="myP">This is JQ</h2>
+    
+
+    <div id="contents">
+        <ul class="people">
+            <li>Kyaw</li>
+            <li>Su</li>
+            <li>Myat</li>
+        </ul>
+    
+        <ul>
+            <li>one</li>
+            <li>tw0</li>
+            <li>three</li>
+        </ul>
+    </div>
+
+    <form action="">
+        <input type="text" name="username">
+        <input type="button" name="click" value="save">
+    </form>
+
+    <div class="foo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi soluta error aliquid explicabo commodi quibusdam temporibus, ipsa accusantium sint vitae totam. Aspernatur neque culpa ducimus vero blanditiis, placeat veniam unde!</p>
+    </div>
+    <div class="foo">
+        <h1>this is h1</h1>
+    </div>
+
+    <h1 class="myH1">This is not bar</h1>
+    <h1 class="bar">This is bar class</h1>
+
+    <ul class="current">
+        <li>current1</li>
+        <li>current2</li>
+        <li>current3</li>
+    </ul>
+    <ul>
+        <li>notcurrent1</li>
+        <li>notcurrent2</li>
+        <li>notcurrent3</li>
+    </ul>
+
+</body>
+</html>

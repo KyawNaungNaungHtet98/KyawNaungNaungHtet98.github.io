@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            var btn = $(".myBtn");
+            btn.on('click',function(param){
+                // console.log("click")
+                $("p").hide(5000,function(param){
+                    alert("hide element P");
+                });
+            })
+            $("a").on('click',function(e){
+                alert("hi");
+                e.preventDefault();
+            })
+
+            $("#year").on('change',function(param){
+                    var year = $(this).val();
+                    if(year>1){
+                        $("#major").show();
+                    }
+                    else{
+                        $("#major").hide();
+                    }
+                })
+
+            $("#myForm").on('submit',function(e){
+                var err = false ;
+                var username = $("#username").val();
+                if(username.length<=5){
+                    err = true;
+                }
+                var phone = $("#phone").val();
+                if(phone.length<=5){
+                    err = true;
+                }
+                
+                if(err){
+                e.preventDefault();
+                }
+            })
+        })
+    </script>
+    <title>JQuery Event</title>
+</head>
+<body>
+    <a href="https://www.google.com/" target="_blank">Go google</a>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minima alias culpa fuga quis eius architecto doloremque ab deleniti, maiores sed accusamus exercitationem voluptas laboriosam tenetur beatae animi ea explicabo!
+    </p>
+    <button class="myBtn">Click</button>
+<br>
+
+    <form action="" id="myForm">
+        <input type="text" name="username" placeholder="username" id="username"><br>
+        <input type="text" name="phone" placeholder="phone" id="phone"><br>
+        <select name="year" id="year">
+            <optgroup label="Academic Year">
+                <option value="1">First year</option>
+                <option value="2">second year</option>
+                <option value="3">third year</option>
+            </optgroup>
+        </select>
+
+        <div id="major" style="display: none;">
+            <input type="radio" name="Major" checked="checked" value="ct">CT
+            <input type="radio" name="Major" value="cs">CS
+        </div>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
