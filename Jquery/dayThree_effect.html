@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $("#hide").on('click',function(){
+                $("p").hide("slow");
+            })
+            $("#show").on('click',function(){
+                $("p").show("fast");
+            })
+            $("#toggle").on('click',function(){
+                $("p").toggle("slow");
+            })
+            $("#fadein").on('click',function(){
+                $("p").fadeIn("slow");
+            })
+            $("#fadeout").on('click',function(){
+                $("p").fadeOut("slow");
+            })
+            $("#fadetoggle").on('click',function(){
+                $("p").fadeToggle();
+            })
+            $("#fadeTo").on('click',function(){
+                $("div").fadeTo("slow",0.6);
+            })
+            $("#slideDown").on('click',function(){
+                $("p").slideDown();
+            })
+            $("#slideUp").on('click',function(){
+                $("p").slideUp();
+            })
+            $("#slideToggle").on('click',function(){
+                $("p").slideToggle();
+            })
+            $("#animateOne").on('click',function(){
+                $("#myDiv").animate({left:"+=200px"});
+            })
+            $("#animateTwo").on('click',function(){
+                $("#myDiv").animate({
+                    left:"200px",
+                    height:"+=150px",
+                    weight:"+=150px",
+                    });
+            })
+        })
+    </script>
+    <title>jQuery Effect</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium aspernatur iste vero dolores impedit velit laboriosam error eos veniam est veritatis quasi atque nulla illo minus vitae perspiciatis illum, dolor pariatur rerum incidunt quos ipsum corrupti. Praesentium aspernatur rerum totam aperiam molestias commodi obcaecati architecto! Corrupti illum facilis qui corporis est itaque, odio, mollitia accusantium expedita obcaecati vitae. Tempore deleniti, nisi sit provident voluptate velit recusandae quaerat fugiat! Maxime iste similique dignissimos ducimus odio commodi dolorum, quis corrupti recusandae, tenetur obcaecati omnis qui incidunt. Repudiandae eaque sed minima nam voluptatibus quia maxime! Consequatur, beatae! Minus voluptatibus a quibusdam pariatur magni, impedit esse voluptates vitae. Aliquam atque nesciunt deleniti, maxime doloremque excepturi aspernatur eum perspiciatis! Asperiores a facere officiis itaque, pariatur veniam, vel incidunt vero esse natus animi porro dolorem corrupti repellat eius sed nulla repudiandae iste nihil dolore optio eaque iusto molestiae suscipit! Nulla repudiandae, mollitia at nemo voluptates illo, quo eligendi atque ullam, in nobis delectus consequatur enim eius ea deserunt repellendus vel similique corporis animi molestiae distinctio consequuntur nostrum? Ut consectetur ex recusandae dignissimos molestiae iusto laudantium perferendis nulla, nisi animi tempore temporibus totam, est ipsum? Corrupti recusandae eos temporibus magni, veniam dolores expedita iste dicta in consequatur.</p>
+    
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+    <button id="fadein">Fade in</button>
+    <button id="fadeout">Fade out</button>
+    <button id="fadetoggle">Fade toggle</button>
+    <button id="fadeTo">Fade to</button>
+    
+    <button id="slideDown">Slide Down</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideToggle">Slide Toggle</button>
+
+    <div id="myDiv" style="width: 100px;height: 100px;background-color: red;position: relative;">love</div>
+    <button id="animateOne">Animate One</button>
+    <button id="animateTwo">Animate Two</button>
+
+</body>
+</html>
