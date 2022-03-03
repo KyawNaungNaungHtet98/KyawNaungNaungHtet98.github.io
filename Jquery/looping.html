@@ -5,26 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery.min.js"></script>
-    <title>Document</title>
-</head>
-<body>
+    <title>Looping </title>
     <script>
         let students = [{name:'mg mg',age:'14',gender:'male'},
         {name:'aung aung',age:'14',gender:'male'},
         {name:'kaung kaung',age:'14',gender:'male'}]
         var data = '';
-        for(student of students){
-            data+= `Age of ${student.name}-${student.age} `;
-        }
-        console.log(data);
+        // for(student of students){//javascript
+        //     data+= `Age of ${student.name}-${student.age} `;
+        // }
+        // console.log(data);
 
         // jquery of array looping
         // //$.each(array,function(index,value){
         //     ...
         // })
-        $.each(students,function(i,v){
-            data+= `Age of ${student.i}-${student.v} `;
+        $.each(students,function(i,v){//jquery 
+            data+= `Age of ${v.name}-${v.age} ${'\n'}`;
         })
+        console.log(data)
 
 //         let fruits = ['Apple','banana','Lime','Lemon'];
 //         var data = '';
@@ -38,6 +37,8 @@
 //     })
 //     console.log(data)
     </script>
+</head>
+<body>
 
 </body>
 </html>
