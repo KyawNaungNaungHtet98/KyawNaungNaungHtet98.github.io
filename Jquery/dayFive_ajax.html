@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            // $.ajax({//get ajax
+            //     url:" https://api.imgflip.com/get_memes",
+            //     type:"GET",
+            //     dataType:"json",
+            // }).done(function(json){
+            //     console.log(json.data.memes)
+            //     var data = "";
+            //     $.each(json.data.memes,function(i,v){
+            //         data+=`<img src="${v.url}" width = 100>`
+            //     })
+            //     $("#memes").html(data)
+            // })
+                $("#myGet").on("click",function(){
+                    $.get(" https://api.imgflip.com/get_memes",function(respone){
+                var data = "";
+                $.each(respone.data.memes,function(i,v){
+                data+=`<img src="${v.url}" width = 100>`
+            })
+            $("#memes").html(data)
+                    })
+                })
+
+            $("#myPost").on("click",function(param){
+                $.post("https://api.imgflip.com/caption_image",{
+                    template_id:"181913649",
+                    username:"ThetPaingHtut",
+                    password:"1234!@#$apple",
+                    text0:"Ok",
+                    text1:"ok",
+
+                },function(respone){
+                    //console.log(respone)
+                    var img = `<img src="${respone.data.url}" width = 500>`
+                    $("#memes").html(img)
+                })
+            })
+    })
+    </script>
+</head>
+<body>
+    <button id="myGet">Get Methods</button>
+    <button id="myPost">Post Methods</button>
+    <div id="memes">
+
+    </div>
+</body>
+</html>
