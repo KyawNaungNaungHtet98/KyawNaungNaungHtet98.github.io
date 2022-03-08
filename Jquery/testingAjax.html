@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        ul.link {
+        list-style-type: none;
+        margin: 20px;
+        padding: 0;
+        text-align: center;
+        }
+        ul.link li {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    ul.link li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px;
+    }
+
+    ul.link li a.active{
+        color: blue;
+        border-bottom: 1px solid red;
+    }
+
+    div.content {
+        max-width: 900px;
+        background-color: whitesmoke;
+        padding: 20px 50px;
+        margin: 0 auto 10px;
+        display: none;
+    }
+        #memes div{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+        }
+        #image{
+            list-style-type: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $('.content').first().slideDown();
+
+            $('ul.link li a').on("click",function (event) { 
+            var current_tab = $(this);
+            $('ul.link li a').removeClass('active');
+            current_tab.addClass('active');
+
+            $('.content').slideUp();
+            current_tab_href = current_tab.attr('href');
+            $(current_tab_href).slideDown(); 
+            event.preventDefault();
+        
+        
+                $.get(" https://api.imgflip.com/get_memes",function(respone){
+                var data = "";
+                var link = "";
+                $.each(respone.data.memes,function(i,v){
+                data+=`<li><img src="${v.url}" width = 100></li><li><a href="${v.url}">${v.url}</a></li>`
+            })
+            $("#image").html(data)
+            
+                    })
+                })
+                })
+    </script>
+    <title>Testing</title>
+</head>
+<body>
+    <div>
+        <ul class="link">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#how">How</a></li>
+            <li><a href="#memes">Memes</a></li>
+        </ul>
+    </div>
+    <div>
+        <div id="home" class="content">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates harum rerum tenetur labore sequi quas ab esse officiis earum. Magni?</p>
+        </div>
+        <div id="how" class="content">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sunt fuga distinctio, ad porro maiores. Dicta omnis ea architecto corporis, laboriosam quibusdam deleniti quos consequatur, aliquam veritatis maiores iste temporibus.</p>
+            
+        </div>
+        <div id="memes" class="content">
+            <div id="image"></div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
