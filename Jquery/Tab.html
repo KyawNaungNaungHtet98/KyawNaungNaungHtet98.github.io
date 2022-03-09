@@ -71,6 +71,9 @@
 
   </style>
 
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <!-- //jquery -->
   <script src="jquery.min.js"></script>
   <script>
@@ -120,6 +123,14 @@
           localStorage.setItem("mycart",JSON.stringify(cartArr))
           cartnoti();//notification function
           showData();//cart table function
+          //swal alert
+          Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Already added to your cart',
+      showConfirmButton: false,
+      timer: 1500
+})
         })
 
 
@@ -150,15 +161,16 @@
               data += `<tr>
                 <td>${++i}<button class="btnDel" data-index ="${--i}">X</button></td>
                 <td>${v.name}</td>
-                <td>${v.price}</td>
+                <td>${formate(v.price)}</td>
                 <td>
                   <input type="number" value = "${v.qty}" min="1" class="changeqty" data-index="${i}"></td>
-                <td>${v.price*v.qty}</td>
+                <td>${formate(v.price*v.qty)}</td>
                 </tr>`
             })
             data+= `<tr>
-              <td colspan="4">Total</td>
-              <td>${total}</td>
+              <td colspan="3">Total</td>
+              <td><button id="buyItem">Buy</button></td>
+              <td>${formate(total)}</td>
               </tr>`
           }
           $("#tbody").html(data);
@@ -176,6 +188,8 @@
             showData();
           }
         })
+        
+        //change qty
         $("#tbody").on("click",".changeqty",function(param){
           var qty = Number($(this).val());
           var index = $(this).data("index");
@@ -186,6 +200,32 @@
             cartnoti();
             showData();
         })
+        
+        //buy item
+        $("#tbody").on("click","#buyItem",function(param){
+          Swal.fire({
+          title: 'Are you sure?',
+          text: "Please check your items",
+          icon: 'warning',
+          showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Buy'
+      }).then((result) => {
+        if (result.isConfirmed) {
+      Swal.fire(
+      'thanks for using my website',
+      'Success to Buy items',
+      'Welcome back '
+    )
+  }
+})
+        })
+
+        //add Number ,
+        function formate(price){
+          return (price).toLocaleString()
+        }
       })
   </script>
 </head>
@@ -275,7 +315,7 @@
     <!-- // cart page table  -->
     <div class="content" id="cart">
       <h3>Cart page</h3>
-      <table width="100%" border="1" cellspacing="0">
+      <table width="100%" border="1" cellspacing="0" cellpadding="0">
         <th>
           <tr>
             <th>No</th>
@@ -290,6 +330,5 @@
       </table>
     </div>
   </div>
-
 </body>
 </html>
