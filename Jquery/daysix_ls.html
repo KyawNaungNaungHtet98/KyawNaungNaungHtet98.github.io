@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $('#myForm').on("submit",function(e){
+                var username = $.trim($("#username").val());
+                var age = Number($("#age").val());
+                // console.log(`${username}-${age}`)
+                // console.log($.type(age))
+                var person = {
+                    name: username,
+                    age: age,
+                }
+                console.log(person)
+                //storage in local 
+                localStorage.setItem("preson",JSON.stringify(person));//change string value
+                e.preventDefault()
+
+            })
+            
+            $(".addToCart").on("click",function(param){
+                var name = $(this).data("name");//data()
+                var price = $(this).data("price");
+                var id = $(this).data("id");
+
+                var item = {
+                    id: id ,name : name, price : price,qty: 0
+                }
+                var cartArr = [];
+                var cartString = localStorage.getItem('cart');
+
+                if(!cartString){ 
+                    cartArr = [item];
+                }else{
+                    cartArr = JSON.parse(cartString);//string to js data type
+                    cartArr.push(item);
+                }
+                
+                $.each(cartArr,function(i,v){
+                    // console.log(v.id);
+                    if(v.id == id){
+                        v.qty ++;
+                        
+                    };
+                })
+                localStorage.setItem('cart',JSON.stringify(cartArr));
+            })
+        })
+    </script>
+    <title>Local Storage</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <input type="text" name="username" placeholder="Mg Mg" id="username"><br>
+        <input type="number" name="age" placeholder="Age" id="age"><br>
+        <input type="submit" value="save">
+    </form>
+
+    <div class="cart">
+        <img src="../background.jpg" alt="" width="450" height="200"><br>
+        <p>item one</p>
+        <button class="addToCart" data-name="Item one" data-price="5000" data-id="001">Cart</button>
+    </div>
+
+    <div>
+        <img src="../background.jpg" alt="" width="450" height="200"><br>
+        <p>item two</p>
+        <button class="addToCart" data-name="Item two" data-price="4500" data-id="002">Cart</button>
+    </div>
+</body>
+</html>
