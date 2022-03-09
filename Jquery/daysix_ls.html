@@ -27,9 +27,8 @@
                 var name = $(this).data("name");//data()
                 var price = $(this).data("price");
                 var id = $(this).data("id");
-
                 var item = {
-                    id: id ,name : name, price : price,qty: 0
+                    id: id ,name : name, price : price,qty: 1
                 }
                 var cartArr = [];
                 var cartString = localStorage.getItem('cart');
@@ -37,17 +36,10 @@
                 if(!cartString){ 
                     cartArr = [item];
                 }else{
+
                     cartArr = JSON.parse(cartString);//string to js data type
                     cartArr.push(item);
                 }
-                
-                $.each(cartArr,function(i,v){
-                    // console.log(v.id);
-                    if(v.id == id){
-                        v.qty ++;
-                        
-                    };
-                })
                 localStorage.setItem('cart',JSON.stringify(cartArr));
             })
         })

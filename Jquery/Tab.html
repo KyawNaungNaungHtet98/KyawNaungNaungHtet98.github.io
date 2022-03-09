@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- //css -->
   <style>
     *{
         margin: 0px;
@@ -68,11 +70,15 @@
     }
 
   </style>
+
+  <!-- //jquery -->
   <script src="jquery.min.js"></script>
   <script>
     $(function (param) { 
+      //show first page
       $('.content').first().slideDown();
 
+      // page change
         $('ul.link-wapper li a').on("click",function (event) { 
             var current_tab = $(this);
             $('ul.link-wapper li a').removeClass('active');
@@ -84,7 +90,103 @@
 
             event.preventDefault();
         })
-     })
+        
+        //save to local storage
+        $('.myShop').on('click',function(param){
+          var id = $(this).data("id");
+          var name = $(this).data("name");
+          var price = $(this).data("price");
+
+          var item = {
+            id : id , name : name ,price : price ,qty : 1
+          }
+          var cartArr = []
+          var cartStr = localStorage.getItem("mycart");
+          if(!cartStr){
+            cartArr.push(item)
+          }else{
+            cartArr = JSON.parse(cartStr);
+            var old = false;
+            $.each(cartArr,function(i,v){
+              if(v.id == id && old == false){
+                v.qty++;
+                old = true;
+              }
+            })
+            if(old == false){
+                cartArr.push(item)
+              }
+          }
+          localStorage.setItem("mycart",JSON.stringify(cartArr))
+          cartnoti();//notification function
+          showData();//cart table function
+        })
+
+
+        //cart noti
+        cartnoti();
+        function cartnoti(){
+          var cartStr = localStorage.getItem("mycart");
+          var notiCount = 0;
+          if(cartStr){
+            var cartArr = JSON.parse(cartStr);
+            $.each(cartArr,function(i,v){
+              notiCount += v.qty;
+            })
+          }
+          $("#noti").html(notiCount);
+        }
+      
+        // cart Table
+        showData();
+        function showData(){
+          var cartStr = localStorage.getItem("mycart");
+          var data = "";
+          var total = 0;
+          if(cartStr){
+            var cartArr = JSON.parse(cartStr);
+            $.each(cartArr,function(i,v){
+              total +=(v.price * v.qty)
+              data += `<tr>
+                <td>${++i}<button class="btnDel" data-index ="${--i}">X</button></td>
+                <td>${v.name}</td>
+                <td>${v.price}</td>
+                <td>
+                  <input type="number" value = "${v.qty}" min="1" class="changeqty" data-index="${i}"></td>
+                <td>${v.price*v.qty}</td>
+                </tr>`
+            })
+            data+= `<tr>
+              <td colspan="4">Total</td>
+              <td>${total}</td>
+              </tr>`
+          }
+          $("#tbody").html(data);
+        }
+          //delete 
+          $("#tbody").on("click",".btnDel",function(param){
+          var option = confirm('Are u sure ?');
+          if(option){
+            var index = $(this).data("index");
+            var cartStr = localStorage.getItem("mycart");
+            var cartArr = JSON.parse(cartStr);
+            cartArr.splice(index,1)
+            localStorage.setItem("mycart",JSON.stringify(cartArr));
+            cartnoti();
+            showData();
+          }
+        })
+        $("#tbody").on("click",".changeqty",function(param){
+          var qty = Number($(this).val());
+          var index = $(this).data("index");
+          var cartStr = localStorage.getItem("mycart");
+            var cartArr = JSON.parse(cartStr);
+            cartArr[index].qty = qty;
+            localStorage.setItem("mycart",JSON.stringify(cartArr));
+            cartnoti();
+            showData();
+        })
+      })
   </script>
 </head>
 <body>
@@ -102,65 +204,90 @@
       <li>
         <a href="#shop">Shop</a>
       </li>
+      <li>
+        <a href="#cart">Cart </a><span id="noti" style="color: red;"></span>
+      </li>
     </ul>
 
+    <!-- //home page -->
     <div class="content" id="home">
       <h3>Home Page</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et molestias, fugiat praesentium perferendis, voluptas officia error qui totam laudantium eum quas eius architecto. Aspernatur veniam rem facere vitae voluptatum.</p>
     </div>
 
+    <!-- //about page -->
     <div class="content" id="about">
       <h3>About Page</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et molestias, fugiat praesentium perferendis, voluptas officia error qui totam laudantium eum quas eius architecto. Aspernatur veniam rem facere vitae voluptatum.</p>
     </div>
 
+    <!-- //contact page -->
     <div class="content" id="contact">
       <h3>Contact Page</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam et molestias, fugiat praesentium perferendis, voluptas officia error qui totam laudantium eum quas eius architecto. Aspernatur veniam rem facere vitae voluptatum.</p>
     </div>
 
+    <!-- // shop page -->
     <div class="content" id="shop">
       <h3>Shop page</h3>
 
       <div class="shopTwo">
         <div><img src="../Css_Project/images/like (1).jpg" alt="" width="230px" height="300px">
-        <p><b>Item Name 1</b> Price($)</p>
-        <button class="myShop">Shop</button>
+        <p><b>Item Name 1</b> Price(3000)</p>
+        <button class="myShop" data-id="001" data-name="Item 1" data-price="3000">Shop</button>
 
         </div>
 
         <div><img src="../Css_Project/images/like (2).jpg" alt=""  width="230px" height="300px">
-            <p><b>Item Name 2</b> Price($)</p>
-            <button class="myShop">Shop</button>
+            <p><b>Item Name 2</b> Price(3500)</p>
+            <button class="myShop" data-id="002" data-name="Item 2" data-price="3500">Shop</button>
 
         </div>
 
         <div><img src="../Css_Project/images/like (3).jpg" alt=""  width="230px" height="300px">
-            <p><b>Item Name 3</b> Price($)</p>
-            <button class="myShop">Shop</button>
+            <p><b>Item Name 3</b> Price(4000)</p>
+            <button class="myShop" data-id="003" data-name="Item 3" data-price="4000">Shop</button>
 
         </div>
 
         <div><img src="../Css_Project/images/like (4).jpg" alt="" width="230px" height="300px">
-            <p><b>Item Name 4</b> Price($)</p>
-            <button class="myShop">Shop</button>
+            <p><b>Item Name 4</b> Price(4500)</p>
+            <button class="myShop" data-id="004" data-name="Item 4" data-price="4500">Shop</button>
 
         </div>
 
         <div><img src="../Css_Project/images/like (5).jpg" alt="" width="230px" height="300px">
-            <p><b>Item Name 5</b> Price($)</p>
-            <button class="myShop">Shop</button>
+            <p><b>Item Name 5</b> Price(5000)</p>
+            <button class="myShop" data-id="005" data-name="Item 5" data-price="5000">Shop</button>
 
         </div>
 
         <div><img src="../Css_Project/images/friendbeer.jpg" alt="" width="230px" height="300px">
-            <p><b>Item Name 6</b> Price($)</p>
-            <button class="myShop">Shop</button>
+            <p><b>Item Name 6</b> Price(5500)</p>
+            <button class="myShop" data-id="006" data-name="Item 6" data-price="5500">Shop</button>
 
         </div>
 
     </div>
 
+    </div>
+
+    <!-- // cart page table  -->
+    <div class="content" id="cart">
+      <h3>Cart page</h3>
+      <table width="100%" border="1" cellspacing="0">
+        <th>
+          <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>QTy</th>
+            <th>Sub Total</th>
+          </tr>
+        </th>
+        <tbody id="tbody">
+        </tbody>
+      </table>
     </div>
   </div>
 
