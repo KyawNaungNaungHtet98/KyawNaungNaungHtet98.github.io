@@ -4,67 +4,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background-color: #b5b5d3;
+            width: 900px;
+        }
+        #myBtn{
+            text-align: center;
+            color: gold;
+        }
+        .showData{
+            font-size: 1000%;
+            background-color:  #b5b5d3;
+            text-decoration: none;
+            border: none;
+            position: relative;
+            top: 225px;
+            bottom: 225px;
+            left: 225px;
+            right: 225px;
+
+        }
+        .showData2{
+            font-size: 230%;
+            background-color:  #b5b5d3;
+            text-decoration: none;
+            border: none;
+            position: absolute;
+            top: 240px;
+            bottom: 100px;
+            left: 225px;
+            right: 225px;
+
+        }
+        #write{
+            position: relative;
+            top: 225px;
+            bottom: 225px;
+            left: 10px;
+            right: 100px;
+            font-size: 135%;
+
+            color: blue;
+        }
+    </style>
     <script src="jquery.min.js"></script>
     <script>
         $(function(param){
-            
+            $(".showData2").hide()
             $.ajax({
             url:" https://type.fit/api/quotes",
             type:"GET",
             dataType:"json",
             }).done(function(json){
-
-            //console.log(json)
-            var data = '';
-            $.each(json,function(i,v){
-                console.log(json[i])
-                data += `<p><pre><cite>${v.text}</cite>
-                                                by${v.author}</pre></p>`
-            })
-            
-            $("#showData").on("click",function(param){
+            $(".showData").on("click",function(param){
                 var number = getRandomInt(1643);
-                console.log(number)
+                //console.log(number)
                 if(number == -1 && number >= 1643){
                     alert('Try again')
                 }else{
-                    $("#write").html(data)
+                    //console.log(json[number])
+                    var data = '';
+                    data += `<p><pre><cite>${json[number].text}</cite>
+                                                            written by ${json[number].author}</pre></p>`
+                        $("#write").html(data)
                 }
+                $(".showData").hide()
+                $(".showData2").show()
             })
-            
+            $(".showData2").on("click",function(param){
+                var number = getRandomInt(1643);
+                //console.log(number)
+                if(number == -1 && number >= 1643){
+                    alert('Try again')
+                }else{
+                    //console.log(json[number])
+                    var data = '';
+                    data += `<p><pre><cite>${json[number].text}</cite>
+                                                            written by ${json[number].author}</pre></p>`
+                        $("#write").html(data)
+                }
+                $(".showData2").show()
+            })
             })
 
             function getRandomInt(max) {
             return Math.floor(Math.random() * max);
             }
-            // $("#showData").on("click",function(param){
-            //     var number = getRandomInt(1643);
-            //     //console.log(number)
-            //     if(number == -1 && number >= 1643){
-            //         alert('Try again')
-            //     }else{
-            //         $("write").html(data[number])
-            //     }
-            // })
+            })
 
-
-
-
-
-
-
-
-
-
-
-
-            
-        })
     </script>
     <title>Document</title>
 </head>
 <body>
-    <button id="showData">Start</button>
-    <div id="write"></div>
+    <div id="myBtn">
+        <button class="showData">start</button>
+        <button class="showData2">Restart</button>
+    </div>
+    
+    <div id="write">
+    </div>
 </body>
 </html>
