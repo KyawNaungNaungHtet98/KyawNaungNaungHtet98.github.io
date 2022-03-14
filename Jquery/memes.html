@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #memes{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $("#repair").hide()
+            $.ajax({//get ajax
+                url:" https://api.imgflip.com/get_memes",
+                type:"GET",
+                dataType:"json",
+            }).done(function(json){
+            console.log(json.data.memes)
+                var data = "";
+                $.each(json.data.memes,function(i,v){
+                    data+=`<div><img src="${v.url}" width = 100>
+                            ${v.name}<br><button class="myBtn" data-index="${i}">Click here</button></div>`
+                })
+                $("#memes").html(data)
+                $("#memes").on("click",".myBtn",function(param){
+                    var index = $(this).data("index")
+                    // console.log(json.data.memes[index].box_count)
+                    var pair = ``;
+                    if(json.data.memes[index].box_count == 2){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                    if(json.data.memes[index].box_count == 3){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2"><br>
+                                <input type="text" placeholder="text-3">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                    if(json.data.memes[index].box_count == 4){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2"><br>
+                                <input type="text" placeholder="text-3"><br>
+                                <input type="text" placeholder="text-4">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                    if(json.data.memes[index].box_count == 5){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2"><br>
+                                <input type="text" placeholder="text-3"><br>
+                                <input type="text" placeholder="text-4"><br>
+                                <input type="text" placeholder="text-5">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                $("#repair").show().html(pair)
+                $("#memes").hide()
+                })
+                Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Please check out your account',
+            showConfirmButton: false,
+            timer: 2500
+            })
+            })
+            
+            $("#repair").on("click","#myBtn",function(param){
+                
+                $("#repair").hide()
+                
+            $.ajax({//get ajax
+                url:" https://api.imgflip.com/get_memes",
+                type:"GET",
+                dataType:"json",
+            }).done(function(json){
+            console.log(json.data.memes)
+                var data = "";
+                $.each(json.data.memes,function(i,v){
+                    data+=`<div><img src="${v.url}" width = 100>
+                            ${v.name}<br><button class="myBtn" data-index="${i}">Click here</button></div>`
+                })
+                $("#memes").html(data)
+                $("#memes").on("click",".myBtn",function(param){
+                    var index = $(this).data("index")
+                    // console.log(json.data.memes[index].box_count)
+                    var pair = ``;
+                    if(json.data.memes[index].box_count == 2){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                    if(json.data.memes[index].box_count == 3){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2"><br>
+                                <input type="text" placeholder="text-3">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                    if(json.data.memes[index].box_count == 4){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2"><br>
+                                <input type="text" placeholder="text-3"><br>
+                                <input type="text" placeholder="text-4">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                    if(json.data.memes[index].box_count == 5){
+                        pair +=`<div><img src="${json.data.memes[index].url}" width = 100></div>
+                                <div><form action="">
+                                <input type="Mail" placeholder="Mail"><br>
+                                <input type="password" placeholder="password"><br>
+                                <input type="text" placeholder="text-1"><br>
+                                <input type="text" placeholder="text-2"><br>
+                                <input type="text" placeholder="text-3"><br>
+                                <input type="text" placeholder="text-4"><br>
+                                <input type="text" placeholder="text-5">
+                                <button id="myBtn">Submit</button>
+                                </form></div>`
+                    }
+                $("#repair").show().html(pair)
+                $("#memes").hide()
+                })
+            })
+
+            })
+            })
+    </script>
+</head>
+<body>
+    <div id="memes">
+</div>
+<div id="repair">
+</div>
+</body>
+</html>
