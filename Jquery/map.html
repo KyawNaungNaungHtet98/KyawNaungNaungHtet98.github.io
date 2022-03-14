@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: indigo;
+        }
+        #map{
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+        #map div{
+            border: 1px solid black;
+            max-width: 900px;
+            color: whitesmoke;
+        }
+        #detail{
+            margin-top: 10px;
+            text-align: center;
+            color: whitesmoke;
+        }
+        #detail div{
+            padding-top: 10px;
+        }
+    </style>
+    
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $(".return").hide()
+            $.ajax({
+            url:"https://restcountries.com/v3.1/all",
+            type:"GET",
+            dataType:"json",
+            }).done(function(json){
+            console.log(json)
+            var data = '';
+            var dataMap = '';
+            $.each(json,function(i,v){
+                dataMap += `<div><img src="${v.flags.svg}" width =150" >${v.name.official}<br>${v.region}<br><button class="myButton" data-index="${i}">Details</button></div>`
+            })
+            $("#map").html(dataMap)
+            $("#map").on("click",".myButton",function(param){
+                $("#map").hide()
+                var index = $(this).data("index")
+                var num = -1;
+                if(index != num){
+                    data += `   <img src="${json[index].flags.svg}" width =250" >
+                                <div>Name:${json[index].name.common}<br>${json[index].name.official}</div>
+                                <div>Languages:${json[index].languages}</div>
+                                <div>Currencies:${json[index].currencies}</div>
+                                <div>Capital:${json[index].capital}</div>
+                                <div>Region:${json[index].region}</div>
+                                <div>Sub-Region:${json[index].subregion}</div>
+                                <div>Area:${json[index].area}</div>
+                                <div>Population:${json[index].population}</div>
+                                <div>Timezone:${json[index].timezones}</div>`
+                }
+                $("#detail").html(data)
+                })
+        })
+    })
+    </script>
+    <title>Map</title>
+</head>
+<body>
+<div id="map"></div>
+
+<div id="detail" ></div>
+</body>
+</html>
