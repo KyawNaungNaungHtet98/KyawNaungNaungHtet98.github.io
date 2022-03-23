@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and Container with bootstrap</title>
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h1 class="text-primary bg-dark">Hello</h1>
+    <h1>Container</h1>
+    <div class="container bg-info">
+        <div class="row">
+            <div class="col-12">
+                <p>container</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-warning">
+        <div class="row">
+            <div class="col-12">
+                <p>container fluid</p>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Grid 1</h2>
+    <div class="container">
+        <div class="row">
+            <!-- unit -> xxl/ xl/lg /md/sm/xs -->
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 bg-primary">One</div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 bg-secondary">Two</div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 bg-info">Three</div>
+        </div>
+    </div>
+
+
+    <h2>Grid 2</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3" style="background-color: #feda02;">Header</div>
+            <div class="col-xl-9 col-lg-9 col-md-9" style="background-color: #52d75f;">Menu</div>
+            <div class="col-xl-12 col-lg-12 col-md-12 p-5 text-center" style="background-color: #0180E7;">Hero</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-8 py-4" style="background-color: #BA0ab7;">Main</div>
+            <div class="col-xl-6 col-lg-6 col-md-4">
+                <div class="row">
+                    <div class="col-12 py-2" style="background-color: #b589ff;">Image</div>
+                    <div class="col-12 py-2" style="background-color: #Caafff;">Extra</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 py-3" style="background-color: #f93871;">Footer</div>
+    </div>
+    </div>
+
+</body>
+</html>
