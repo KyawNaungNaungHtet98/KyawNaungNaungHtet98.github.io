@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Rendenring</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- {{name}}
+        <ol>
+            <li v-for="(friend,index) in friends">({{index}}){{friend.name}} - {{friend.age}} - {{friend.gender}}</li>
+        </ol> -->
+        
+        <table border="1" cellspacing="0" cellpadding="5" style="border-color: goldenrod; text-align: center;">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(friend,index) in friends">
+                    <td>{{++index}}</td>
+                    <td>{{friend.name}}</td>
+                    <td>{{friend.age}}</td>
+                    <td>{{friend.gender}}</td>
+                    <td>
+                        <button @click="More(--index)">More</button>
+                    </td>
+                </tr>
+            </tbody>
+            
+            
+            
+        </table>
+
+        <table border="1" cellspacing="0" cellpadding="5" style="border-color: goldenrod; text-align: center;">
+            <h2>Check Boy Information</h2>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(friend,index) in checkBoy">
+                    <td>{{++index}}</td>
+                    <td>{{friend.name}}</td>
+                    <td>{{friend.age}}</td>
+                    <td>{{friend.gender}}</td>
+                    <td>
+                        <button @click="More(--index)">More</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- check girl information  -->
+        <table border="1" cellspacing="0" cellpadding="5" style="border-color: goldenrod; text-align: center;">
+            <h2>Check Girl information</h2>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(friend,index) in checkGirl">
+                    <td>{{++index}}</td>
+                    <td>{{friend.name}}</td>
+                    <td>{{friend.age}}</td>
+                    <td>{{friend.gender}}</td>
+                    <td>
+                        <button @click="More(--index)">More</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- javascript  -->
+    <script>
+        
+        const app = Vue.createApp({
+            data(){
+                return{
+                    name : "Naung Naung",
+                    friends :   [{name:"su su",age:23,gender:"female"},
+                                {name:"Mu Mu",age:23,gender:"female"},
+                                {name:"Ku Ku",age:32,gender:"male"},
+                                {name:"Mya",age:30,gender:"female"},]
+                }
+            },
+            methods:{
+                More(index){
+                    let friend = this.friends[index]
+                    alert(friend.name)
+                }
+            },
+            computed:{
+                arrlength(){
+                    return this.friends.length
+                },
+                checkBoy(){
+                    return this.friends.filter(row=>row.gender=="male")
+                },
+                checkGirl(){
+                    return this.friends.filter(row=>row.gender=="female")
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+</html>

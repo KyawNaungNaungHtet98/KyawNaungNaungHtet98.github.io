@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI with vue js</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="bmi">
+        <center>
+        <form action="" @submit.prevent="calculate">
+            <input type="number" placeholder="Weight Lb" v-model.number="weight"><br>
+            <input type="number" placeholder="height Ft" v-model.number="heightFt"><br>
+            <input type="number" placeholder="height Inc" v-model.number="heightInc"><br>
+            <input type="submit" value="calculate"><br>
+        </form>
+    </center>
+        
+        <div v-if="status==true">
+            <p> Weight = {{weight}}<br>
+                Height = {{heightFt}} ft , {{heightInc}} inc</p>
+            <p>Your BMI is {{body}}</p>
+            <p v-if="body>30"> You are Obese</p>
+            <p v-else-if="body>=25 && body <30 "> You are Overweight</p>
+            <p v-else-if="body>=18 && body<=24">You are Healthy</p>
+            <p v-else-if="body<18"> You are Underweight</p>
+        </div>
+        <div v-else-if>
+            <div><p>When BMI is higher than 30,This is <span>OBESE</span><br>
+            When BMI is between 25 and 30 ,This is <span>Overweight</span><br>
+            When BMI is between 18 and 24, This is <span>Normal Weight</span><br>
+            When BMI is under 18, This is <span>Underweight</span></p></div>
+        </div>
+    
+    </div>
+    <script src="bmi.js"></script>
+</body>
+</html>
