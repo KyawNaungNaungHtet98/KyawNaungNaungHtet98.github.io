@@ -1,0 +1,30 @@
+body{
+  margin: 0px;
+  padding:0px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#intro{
+  background-color: whitesmoke;
+  color: rgb( 34, 67, 182);
+}
+#intro img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+table tr td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#lang{
+  background-color: white;
+  color: rgb( 34, 67, 182);
+}
+#lang ul li {
+  background-color: whitesmoke;
+  color: rgb( 34, 67, 182);
+}
